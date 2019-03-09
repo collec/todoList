@@ -1,56 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <title>My Todo List</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
 </head>
-
 <body>
   <script src="node_modules/jquery/dist/jquery.js"></script>
-  <script src="js/base.js"></script>
   <div class="container">
     <h1>My Todo List</h1>
     <div class="add-task">
-      <input id="id-input-todo" type="text" placeholder="明天早上要早起...">
+      <input id="id-input-add" type="text" placeholder="明天早上要早起...">
       <button id="id-button-add" type="button">submit</button>
     </div>
-    <div class="task-list">
-      <div class="task-item">
-        <span><input type="checkbox"></span>
-        <span class="task-content">helloworld</span>
-        <span>delete</span>
-        <span>detail</span>
-      </div>
-    </div>
-    <div class="task-list">
-      <div class="task-item">
-        <span><input type="checkbox"></span>
-        <span class="task-content">helloworld</span>
-        <span>delete</span>
-        <span>detail</span>
-      </div>
-    </div>
-    <div class="task-list">
-      <div class="task-item">
-        <span><input type="checkbox"></span>
-        <span class="task-content">helloworld</span>
-        <span>delete</span>
-        <span>detail</span>
-      </div>
-    </div>
-    <div class="task-list">
-      <div class="task-item">
-        <span><input type="checkbox"></span>
-        <span class="task-content">helloworld</span>
-        <span>delete</span>
-        <span>detail</span>
-      </div>
-    </div>
+    <div class="task-list" id='id-div-list'>
 
-
-
+    </div>
     <div class="task-detail">
       <!-- 任务详情遮罩 mask -->
       <div class="task-detail-mask"></div>
@@ -65,52 +32,9 @@
         <input type="date">
         <button type="submit">submit</button>
       </div>
-
     </div>
-
   </div>
-<script>
-var log = function() {
-  console.log.apply(console, arguments)
-}
-var e = function(selector){
-  return document.querySelector(selector)
-}
-
-var addButton = e("#id-button-add")
-addButton.addEventListener('click', function(){
-  log('addButton')
-})
-
-var templateTodo = function(todo) {
-  var t = `
-    <div class="task-list">
-      <div class="task-item">
-        <span><input type="checkbox"></span>
-        <span class="task-content">${todo}</span>
-        <span>delete</span>
-        <span>detail</span>
-      </div>
-    </div>
-  `
-  return t
-}
-var saveTodos = function() {
-
-}
-
-
-var save = function(array) {
-  var s = JSON.stringify(array)
-  localStorage.taskList = s
-}
-
-var load = function() {
-  var s = localStorage.taskList
-  return JSON.parse(s)
-}
-
-</script>
+  <script src="js/todo.js"></script>
 </body>
 
 </html>

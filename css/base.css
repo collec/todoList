@@ -19,10 +19,6 @@ h1 {
   text-align: center;
 }
 
-.task-list {
-  margin: 5px 0;
-}
-
 .add-task {
   margin: 10px 0;
 }
@@ -95,7 +91,9 @@ button:hover {
   box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
   cursor: pointer;
 }
-
+.task-done{
+  text-decoration: line-through;
+}
 .task-item:hover {
   background: #ddd;
   transition: background 0.1s;
